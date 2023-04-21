@@ -1,8 +1,8 @@
 'use strict'
 
-var fs = require('fs');
-var stripAnsi = require('strip-ansi');
-var term = 13; // carriage return
+let fs = require('fs');
+let stripAnsi = require('strip-ansi');
+let term = 13; // carriage return
 
 /**
  * create -- sync function for reading user input from stdin
@@ -19,11 +19,11 @@ var term = 13; // carriage return
 function create(config) {
 
   config = config || {};
-  var sigint = config.sigint;
-  var eot = config.eot;
-  var autocomplete = config.autocomplete =
+  let sigint = config.sigint;
+  let eot = config.eot;
+  let autocomplete = config.autocomplete =
     config.autocomplete || function(){return []};
-  var history = config.history;
+  let history = config.history;
   prompt.history = history || {save: function(){}};
   prompt.hide = function (ask) { return prompt(ask, {echo: ''}) };
 
