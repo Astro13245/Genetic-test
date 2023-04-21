@@ -6,17 +6,21 @@ let multicellularOrganisms = {};
 
 function create(){
     console.log("You can only create unicellular organisms(sorry)")
-    let name = prompt("What's the name of the organism");
-    let type = prompt("What's the type(Prokaryotes/Eukaryotes): ");
-    unicellularOrganisms[name] = {
-        type: type,
+    while (true) {
+        let name = prompt("What's the name of the organism");
+        let type = prompt("What's the type(Prokaryotes/Eukaryotes): ");
+        unicellularOrganisms[name] = {
+            type: type,
+            numberOfOrganisms: 1
+        };
 
-    };
+        let startPlay = prompt("Do you want to start")
 
-    let startPlay = prompt("Do you want to start")
-
-    if (startPlay.toLowerCase() === "yes") {
-        play();
+        if (startPlay.toLowerCase() === "yes" || startPlay.toLowerCase() === "Sure") {
+            play();
+        } else {
+            continue;
+        }
     }
 };
 
@@ -24,14 +28,16 @@ function eat(eatingOrganism, beingEatenOrganism) {
 
 }
 
-function reproduce(organism){
-
+function asexualReproduction(organism){
 };
+
+function sexualReproduction(firstParentOrganism, secondParentOrganisms){
+
+}
 
 function play(){
-    for (let i = 0; i < unicellularOrganisms.length; i++){
-        unicellularOrganisms[i].numberOfOrganisms++;
-    };
-
     
 };
+
+//Actually playing the test
+create()
